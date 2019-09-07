@@ -1,34 +1,44 @@
-body {
-  font-family: 'Helvetica Neue', Verdana, Helvetica, Arial, sans-serif;
-  max-width: 600px;
-  margin: 0 auto;
-  padding-top: 72px;
-  -webkit-font-smoothing: antialiased;
-  font-size: 1.125em;
-  color: #333;
-  line-height: 1.5em;
+.home-page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-top: 40px;
 }
 
-h1, h2, h3 {
-  color: #000;
-}
-h1 {
-  font-size: 2.5em
+.todo-list-container {
+    width: 400px;
 }
 
-h2 {
-  font-size: 2em
+.todo-list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
-h3 {
-  font-size: 1.5em
+.todo-list-input-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-a {
-  text-decoration: none;
-  color: #09f;
+.input-element {
+    width: 80%;
+    margin-left: 3%;
 }
 
-a:hover {
-  text-decoration: underline;
+.todo-filters {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.visibility-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }

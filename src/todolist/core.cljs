@@ -1,32 +1,22 @@
 (ns todolist.core
     (:require
-      [reagent.core :as r]))
+     [reagent.core :as r]
+     [todolist.views :as views]))
 
-;; -------------------------
-;; Views
-
-
-(defn hello-world
+(defn home-page
+  "Render the application's home page."
   []
-  [:p "hello world!"])
+  [:div.home-page
+   (views/todo-header)
+   (views/todo-list-container)])
 
-(defn ul-of-numbers-from-range
-  [range-of-numbers]
-  [:ul
-   (map (fn [n]
-          [:li n])
-        range-of-numbers)])
+(defn mount-root
+  "Render the application to a specified DOM element."
+  []
+  (r/render [home-page]
+            (.getElementById js/document "app")))
 
-(defn home-page []
-  [:div
-   [:h2 "Welcome to Reagent"]
-   (ul-of-numbers-from-range (range 1 10))])
-
-;; -------------------------
-;; Initialize app
-
-(defn mount-root []
-  (r/render [home-page] (.getElementById js/document "app")))
-
-(defn init! []
+(defn init!
+  "Start the application."
+  []
   (mount-root))

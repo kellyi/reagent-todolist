@@ -1,22 +1,44 @@
+# reagent-todolist
 
-### Development mode
-To start the Figwheel compiler, navigate to the project folder and run the following command in the terminal:
+A Reagent todo list application for a demo.
 
+## Requirements
+
+- Clojure
+- Leiningen
+
+## Setup
+
+```sh
+lein deps
 ```
+
+## Development
+
+To start a server & REPL run:
+
+```sh
 lein figwheel
 ```
 
-Figwheel will automatically push cljs changes to the browser.
-Once Figwheel starts up, you should be able to open the `public/index.html` page in the browser.
+This will start a server on port `3449`.
 
-### REPL
+### CIDER
 
-The project is setup to start nREPL on port `7002` once Figwheel starts.
-Once you connect to the nREPL, run `(cljs)` to switch to the ClojureScript REPL.
+To start the server & a CIDER REPL from within Emacs, open one of the project's
+`cljs` files in a buffer then run:
 
-### Building for production
-
+```emacs
+cider-jack-in-cljs
 ```
-lein clean
+
+This will also start a server on port `3449`.
+
+Note that you can use either `lein figwheel` or `cider-jack-in-cljs` but not
+both.
+
+## Distribution
+
+```sh
 lein package
 ```
